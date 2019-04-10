@@ -93,6 +93,8 @@ Getting an LED flashing is cool, but what is cooler is getting data and sending 
 
 PyBytes makes it easy to configure your device. You add a new device from their Web dashboard, set up a unique name for it and the WiFi details for the WiFi you want the PyCom device to connect to. You then get an activation token that you can use when flashing the firmware to push these details to the device.
 
+Flash the firmware, and configure it for PyBytes, setting the activation token.
+
 Once the firmware is updated, the device will appear in the PyBytes dashboard.
 
 ![The dashboard showing data from a device](./Images/DashboardDeviceData.png)
