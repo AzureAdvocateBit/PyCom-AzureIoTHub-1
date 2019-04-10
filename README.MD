@@ -44,7 +44,7 @@ Like a lot of developers, I love [Visual Studio Code](https://code.visualstudio.
 
 These boards run [MicroPython](https://www.micropython.org), an implementation of Python designed to run on micro controllers. MicroPython projects have the following structure:
 
-```
+```sh
 Project folder
 |-lib
 |  |- some_library.py
