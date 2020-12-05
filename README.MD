@@ -4,9 +4,9 @@ I'm supporting an IoT hackathon over the weekend of April 27th/28th 2019. It wil
 
 [eventbrite.com/e/the-big-iothack-tickets-58111865153](https://www.eventbrite.com/e/the-big-iothack-tickets-58111865153)
 
-As a part of this hackathon, [PyCom](https://pycom.io) are providing a load of devices. These are tiny IoT development boards that run MicroPython, and can connect over WiFi, BLE, [LoRa](https://lora-alliance.org) or [SigFox](https://www.sigfox.com/). PyCom have a service called PyBytes that can take data from the devices, and this can be integrated into [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/?WT.mc_id=pycom-blog-jabenn). To prepare for this event, I grabbed a board and started to play.
+As a part of this hackathon, [PyCom](https://pycom.io) are providing a load of devices. These are tiny IoT development boards that run MicroPython, and can connect over WiFi, BLE, [LoRa](https://lora-alliance.org) or [SigFox](https://www.sigfox.com/). PyCom have a service called PyBytes that can take data from the devices, and this can be integrated into [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/?WT.mc_id=academic-0000-jabenn). To prepare for this event, I grabbed a board and started to play.
 
-> You will need an Azure subscription to work thorough this. If you don't have one, you can sign up for free at [azure.microsoft.com/free](https://azure.microsoft.com/free/?WT.mc_id=pycom-blog-jabenn). This will give you $200 of credit, access to free services for 12 months, and other services free forever. You will need a credit card, but this is only for validation - you will NOT be billed unless to choose to upgrade your subscription.
+> You will need an Azure subscription to work thorough this. If you don't have one, you can sign up for free at [azure.microsoft.com/free](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jabenn). This will give you $200 of credit, access to free services for 12 months, and other services free forever. You will need a credit card, but this is only for validation - you will NOT be billed unless to choose to upgrade your subscription.
 
 ## Getting started
 
@@ -36,7 +36,7 @@ I then did the usual dance to upgrade the firmware by [following the PyCom docs]
 
 ### Configure the software
 
-Like a lot of developers, I love [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=pycom-blog-jabenn)! PyCom provides an [extension for Code](https://marketplace.visualstudio.com/itemdetails?itemName=pycom.Pymakr&WT.mc_id=pycom-blog-jabenn) that can talk to their boards.
+Like a lot of developers, I love [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-0000-jabenn)! PyCom provides an [extension for Code](https://marketplace.visualstudio.com/itemdetails?itemName=pycom.Pymakr&WT.mc_id=academic-0000-jabenn) that can talk to their boards.
 
 ![The PyCom extension inside the Visual Studio Code extension marketplace](./Images/PyComExtension.png)
 
@@ -139,18 +139,18 @@ This uses the `SI7006A20` temperature sensor to get the temperature, then sends 
 
 ## Integrate PyBytes with IoT Hub
 
-PyBytes supports integrations with [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/?WT.mc_id=pycom-blog-jabenn), and it can push the data received from the device into IoT Hub.
+PyBytes supports integrations with [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/?WT.mc_id=academic-0000-jabenn), and it can push the data received from the device into IoT Hub.
 
 ### Create an IoT Hub
 
-I created a new IoT Hub instance to send the data to. I've got the [Azure IoT Device Workbench extension](https://marketplace.visualstudio.com/itemdetails?itemName=vsciot-vscode.vscode-iot-workbench/?WT.mc_id=pycom-blog-jabenn) installed in Visual Studio Code, and this provides capabilities to configure IoT services from inside Code.
+I created a new IoT Hub instance to send the data to. I've got the [Azure IoT Device Workbench extension](https://marketplace.visualstudio.com/itemdetails?itemName=vsciot-vscode.vscode-iot-workbench%2F%3FWT.mc_id%3Dpycom-blog-jabenn&WT.mc_id=academic-0000-jabenn) installed in Visual Studio Code, and this provides capabilities to configure IoT services from inside Code.
 
 
 From the command palette, selecting *Azure IoT Hub -> Create IoT Hub* allows you to create a new IoT Hub. Follow the instructions, and you get a new IoT Hub set up.
 
 ### Integrate the IoT Hub into PyBytes
 
-When the IoT Hub is running, open it up in the [Azure Portal](https://portal.azure.com/?WT.mc_id=pycom-blog-jabenn). Head to *Settings -> Shared Access Policies*, select the *registryReadWrite* policy and copy the *Connection string - Primary key*. PyBytes needs read and write permissions on the registry to register devices for you - each device configured in PyBytes becomes a device in IoT Hub.
+When the IoT Hub is running, open it up in the [Azure Portal](https://portal.azure.com/?WT.mc_id=academic-0000-jabenn). Head to *Settings -> Shared Access Policies*, select the *registryReadWrite* policy and copy the *Connection string - Primary key*. PyBytes needs read and write permissions on the registry to register devices for you - each device configured in PyBytes becomes a device in IoT Hub.
 
 ![The registryReadWrite setting in the IoT Hub Shared access policies blade](./Images/HubSharedAccessPolicies.png)
 
@@ -166,4 +166,4 @@ The data is raw, unenriched data showing the signal id and value.
 
 ## Next steps
 
-Now that the data is flowing into IoT Hub, you can do anything you want with it - enrich it using [stream analytics](https://azure.microsoft.com/services/stream-analytics/?WT.mc_id=pycom-blog-jabenn) or an [Azure function](https://azure.microsoft.com/services/functions/?WT.mc_id=pycom-blog-jabenn), do [time series insights](https://azure.microsoft.com/services/time-series-insights/?WT.mc_id=pycom-blog-jabenn) on it, anything you want!
+Now that the data is flowing into IoT Hub, you can do anything you want with it - enrich it using [stream analytics](https://azure.microsoft.com/services/stream-analytics/?WT.mc_id=academic-0000-jabenn) or an [Azure function](https://azure.microsoft.com/services/functions/?WT.mc_id=academic-0000-jabenn), do [time series insights](https://azure.microsoft.com/services/time-series-insights/?WT.mc_id=academic-0000-jabenn) on it, anything you want!
